@@ -13,5 +13,10 @@
  */
 
 return [
-    // ...
+    'db' => [
+        'driver' => 'pdo',
+        'dsn'    => 'mysql:host=127.0.0.1;dbname=db_apple',
+        'username' => 'devel',
+        'password' => 'devel'
+    ],
 ];

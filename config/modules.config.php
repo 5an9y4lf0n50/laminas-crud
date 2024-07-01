@@ -6,7 +6,18 @@
  * This should be an array of module namespaces used in the application.
  */
 return [
+    'Laminas\I18n',
+    'Laminas\Paginator',
+    'Laminas\Hydrator',
+    'Laminas\InputFilter',
+    'Laminas\Filter',
     'Laminas\Router',
     'Laminas\Validator',
+    'Laminas\Form',
+    'Laminas\Db',
+    'Laminas\Router',
+    'Laminas\Validator',
+    'Laminas\Diactoros',
     'Application',
+    'Album'
 ];

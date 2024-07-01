@@ -1,0 +1,5 @@
+# Change Mode Development
+composer development-enable or  composer development-disable
+
+# You can test the status of development mode using:
+composer development-status
