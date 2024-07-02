@@ -1,0 +1,40 @@
+<?php
+
+
+$title = 'My contacts';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('contact', ['action' => 'add']) ?>">Add new contact</a>
+</p>
+
+<?= $this->flashMessenger()->render('success') ?>
+
+<table class="table">
+<tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Website</th>
+    <th>&nbsp;</th>
+</tr>
+<?php if(count($contacts) == 0): ?>
+    <tr>
+        <td colspan="4" class="text-center">-- No Data --</td>
+    </tr>
+<?php else: ?>
+    <?php foreach ($contacts as $contact) : ?>
+        <tr>
+            <td><?= $this->escapeHtml($contact->name) ?></td>
+            <td><?= $this->escapeHtml($contact->phone) ?></td>
+            <td><?= $this->escapeHtml($contact->email) ?></td>
+            <td><?= $this->escapeHtml($contact->website) ?></td>
+            <td>
+                <a href="<?= $this->url('contact', ['action' => 'edit', 'id' => $contact->id]) ?>">Edit</a>
+                <a href="<?= $this->url('contact', ['action' => 'delete', 'id' => $contact->id]) ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+<?php endif; ?>
+</table>

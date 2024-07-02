@@ -1,1 +1,1 @@
-php -S 0.0.0.0:9090 -t public
+clear && php -S 0.0.0.0:9090 -t public

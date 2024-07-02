@@ -17,8 +17,11 @@
         "laminas/laminas-development-mode": "^3.12.0",
         "laminas/laminas-form": "^3.19",
         "laminas/laminas-i18n": "^2.26",
+        "laminas/laminas-json": "^3.6",
         "laminas/laminas-mvc": "^3.7.0",
+        "laminas/laminas-mvc-plugin-flashmessenger": "^1.10",
         "laminas/laminas-skeleton-installer": "^1.3.0",
+        "laminas/laminas-stdlib": "^3.19",
         "laminas/laminas-view": "^2.35",
         "mezzio/mezzio-laminasrouter": "^3.9"
     },
@@ -33,7 +36,9 @@
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/",
-            "Album\\": "module/Album/src/"
+            "Album\\": "module/Album/src/",
+            "Contact\\": "module/Contact/src/",
+            "Testing\\": "module/Testing/src/"
         }
     },
     "autoload-dev": {

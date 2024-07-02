@@ -1,0 +1,85 @@
+<?php
+$title = 'Add new contact';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+
+// This provides a default CSS class and placeholder text for the title element:
+$name = $form->get('name');
+$name->setAttribute('class', 'form-control');
+$name->setAttribute('placeholder', 'Name');
+
+$email = $form->get('email');
+$email->setAttribute('class', 'form-control');
+$email->setAttribute('placeholder', 'Email Address');
+
+$phone = $form->get('phone');
+$phone->setAttribute('class', 'form-control');
+$phone->setAttribute('placeholder', 'Phone Number');
+
+$website = $form->get('website');
+$website->setAttribute('class', 'form-control');
+$website->setAttribute('placeholder', 'Website Address');
+
+$address = $form->get('address');
+$address->setAttribute('class', 'form-control');
+$address->setAttribute('placeholder', 'Street Address');
+$address->setAttribute('rows', '5');
+
+$status = $form->get('status');
+$status->setAttribute('class', 'form-control');
+
+
+
+// This provides CSS classes for the submit button:
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('contact', ['action' => 'add']));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<?php // Wrap the elements in divs marked as form groups, and render the
+      // label, element, and errors separately within ?>
+<div class="form-group mb-3">
+    <?= $this->formLabel($name) ?>
+    <?= $this->formElement($name) ?>
+    <?= $this->formElementErrors()->render($name, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group mb-3">
+    <?= $this->formLabel($email) ?>
+    <?= $this->formElement($email) ?>
+    <?= $this->formElementErrors()->render($email, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group mb-3">
+    <?= $this->formLabel($phone) ?>
+    <?= $this->formElement($phone) ?>
+    <?= $this->formElementErrors()->render($phone, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group mb-3">
+    <?= $this->formLabel($website) ?>
+    <?= $this->formElement($website) ?>
+    <?= $this->formElementErrors()->render($website, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group mb-3">
+    <?= $this->formLabel($address) ?>
+    <?= $this->formElement($address) ?>
+    <?= $this->formElementErrors()->render($address, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group mb-3">
+    <?= $this->formLabel($status) ?>
+    <?= $this->formElement($status) ?>
+    <?= $this->formElementErrors()->render($status, ['class' => 'help-block']) ?>
+</div>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();
